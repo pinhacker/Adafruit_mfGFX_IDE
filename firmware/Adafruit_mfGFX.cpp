@@ -479,7 +479,7 @@ void Adafruit_GFX::drawChar(int16_t x, int16_t y, unsigned char c,
   	uint16_t fontIndex = fontDesc[c].offset + 2; //((fontDesc + c)->offset) + 2;
   
   for (int8_t i=0; i<fontDesc[c].height; i++ ) {	// i<fontHeight
-    uint8_t line;
+    uint8_t line = 0;
     for (int8_t j = 0; j<fontDesc[c].width; j++) {			//j<fontWidth
       if (bitCount++%8 == 0) {
         line = pgm_read_byte(fontData+fontIndex++);
